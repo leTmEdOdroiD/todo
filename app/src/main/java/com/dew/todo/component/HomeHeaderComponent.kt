@@ -33,8 +33,8 @@ fun HomeHeaderComponent() {
         )
         Spacer(modifier = Modifier.width(8.dp))
         Text(
-            "Dew",
-            fontSize = 24.sp,
+            "Home",
+            fontSize = 28.sp,
             fontWeight = FontWeight.Bold
         )
     }
