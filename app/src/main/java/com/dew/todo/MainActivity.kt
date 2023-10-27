@@ -8,6 +8,7 @@ import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -16,7 +17,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.dew.todo.component.HomeHeaderComponent
+import com.dew.todo.component.TaskComponent
 import com.dew.todo.component.WelcomeMessageComponent
+import com.dew.todo.data.taskList
 import com.dew.todo.ui.theme.TodoTheme
 
 class MainActivity : ComponentActivity() {
@@ -43,8 +46,14 @@ fun HomePage() {
             HomeHeaderComponent()
         }
         item {
-            Spacer(modifier = Modifier.height(16.dp))
+            Spacer(modifier = Modifier.height(28.dp))
             WelcomeMessageComponent()
+            Spacer(modifier = Modifier.height(28.dp))
+        }
+        items(taskList){
+            Spacer(modifier = Modifier.height(16.dp))
+            TaskComponent(task = it)
         }
     }
 }
+
